@@ -1,0 +1,38 @@
+#map {
+  position: relative;
+  height: 91%;  /* or as desired */
+  width: 100%;  /* This means "100% of the width of its container", the .col-md-8 */
+}
+
+html {
+  height: 100%;
+  
+}
+
+body {
+  background: linear-gradient(#00bf8f,#001510);
+  height: 100%;
+  padding: 25px;
+  color: white;
+
+}
+
+h1 {
+  text-align:  center;
+}
+
+
+
+
+label {
+  color: black;
+  font-weight:  bold;
+}
+
+
+
+
+
+
+
+

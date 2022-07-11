@@ -1,0 +1,136 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Hello, world!</title>
+
+    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Hello, Alex!</h1>
+
+
+<div class="container px-3 my-3">
+	<!-- <form action="/pdf_gen" method="post" id="myForm"> -->
+    <!-- <form method="POST" role="form" id="contactForm" data-sb-form-api-token="API_TOKEN"> -->
+   	<form id="myForm">
+    	<h4>Student Info</h4>
+    	<div class="form-floating mb-3">
+            <input class="form-control" id="studentName" type="text" placeholder="Student Name" data-sb-validations="required" />
+            <label for="studentName">Student Name</label>
+            <div class="invalid-feedback" data-sb-feedback="studentName:required">Student Name is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" value="KCGI" id="location" type="text" placeholder="Location" data-sb-validations="required" />
+            <label for="location">Location</label>
+            <div class="invalid-feedback" data-sb-feedback="location:required">Location is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <select class="form-select" id="paymentType" aria-label="Payment Type">
+                <option value="Cash">Cash</option>
+                <option value="Check">Check</option>
+                <option value="Card">Card</option>
+                <option value="Prepay">Prepay</option>
+            </select>
+            <label for="paymentType">Payment Type</label>
+        </div>
+
+
+        <br>
+    	<h4>Flight Time</h4>
+    	<div class="form-floating mb-3">
+            <select class="form-select" id="plane" aria-label="Plane">
+                <option value="173PM">173PM</option>
+                <option value="102GX">102GX</option>
+            </select>
+            <label for="plane">Plane</label>
+        </div>
+
+    	<div class="row">
+        	<div class="col">
+		        <div class="form-floating mb-3">
+		            <input class="form-control" step=".01" id="hobbsIn" type="number" placeholder="HOBBS IN" data-sb-validations="" />
+		            <label for="hobbsIn">HOBBS IN</label>
+		        </div>
+		      	</div>
+		      	<div class="col">
+
+		        <div class="form-floating mb-3">
+		            <input class="form-control" step=".01" id="hobbsOut" type="number" placeholder="HOBBS OUT" data-sb-validations="" />
+		            <label for="hobbsOut">HOBBS OUT</label>
+		        </div>
+    		</div>
+    	</div>
+
+		<br>
+    	<h4>Ground Time</h4>
+    	
+    	<div class="row">
+        	<div class="col">
+		        <div class="form-floating mb-3">
+		            <input class="form-control" id="groundStart" type="time" placeholder="Ground Start" data-sb-validations="" />
+		            <label for="groundStart">Ground Start</label>
+		        </div>
+		      	</div>
+		      	<div class="col">
+
+			        <div class="form-floating mb-3">
+			            <input class="form-control" id="groundEnd" type="time" placeholder="Ground End" data-sb-validations="" />
+			            <label for="groundEnd">Ground End</label>
+			        </div>
+    		</div>
+    	</div>
+
+    	<br>
+    	<h4>Other</h4>
+    	
+    	<div class="row">
+        	<div class="col">
+			        <div class="form-floating mb-3">
+			            <input class="form-control" id="productName" type="text" placeholder="Product Name" data-sb-validations="" />
+			            <label for="productName">Product Name</label>
+			        </div>
+			 </div>
+			 <div class="col">
+		        <div class="form-floating mb-3">
+		            <input class="form-control" step=".01" id="productPrice" type="text" placeholder="Product Price" data-sb-validations="" />
+		            <label for="productPrice">Product Price</label>
+		        </div>
+	    	</div>
+    	</div>
+
+
+        <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+                <div class="fw-bolder">Form submission successful!</div>
+            </div>
+        </div>
+
+        <div class="d-none" id="submitErrorMessage">
+            <div class="text-center text-danger mb-3">Error sending message!</div>
+        </div>
+
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="./js/js.js"></script>
+
+
+  </body>
+</html>
