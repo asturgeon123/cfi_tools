@@ -21,7 +21,7 @@ $("form").submit(function(event) {
       $.ajax({
           type: "POST",
           url: "/pdf_gen",
-          data: JSON.stringify ({remos_block10_rate:"110",remos_block5_rate:"115",remos_hourly_rate:"120",cfi_name:"Alex Sturgeon","student_name":student_name,'destination':location,'payment_method':payment_type,'tailnumber':plane,'hobbs_in':hobbsin,'hobbs_out':hobbsout,'ground_start':ground_start,'ground_stop':ground_stop,'product_name':product_name,'productprice':productprice}),
+          data: JSON.stringify ({ground_instruction_rate:"50",flight_instruction_rate:"50",remos_block10_rate:"110",remos_block5_rate:"115",remos_hourly_rate:"120",cfi_name:"Alex Sturgeon","student_name":student_name,'destination':location,'payment_method':payment_type,'tailnumber':plane,'hobbs_in':hobbsin,'hobbs_out':hobbsout,'ground_start':ground_start,'ground_stop':ground_stop,'product_name':product_name,'productprice':productprice}),
           success: function(response){
             //alert(data)
             console.log(response)

@@ -53,18 +53,6 @@ def pdf_gen():
 	process = subprocess.call(['docx2pdf', path,'Skybound_Paysheet.pdf'])
 
 	
-
-	'''
-	stream = io.BytesIO(pdf.output(dest='S').encode('latin-1'))
-    return send_file(
-        stream,
-        mimetype='application/pdf',
-        attachment_filename='example.pdf',
-        as_attachment=False
-    )
-	
-	#return send_file(path, download_name=path)
-	'''
 	#return send_from_directory('', 'pdf_viewer.html')
 	resp = jsonify(success=True)
 	return resp
