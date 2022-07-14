@@ -1,12 +1,12 @@
-from __future__ import print_function
+
 
 import datetime
-
+import json
 
 
 from mailmerge import MailMerge
 
-import json
+
 
 
 def time_string_to_decimals(time_string):
@@ -17,7 +17,7 @@ def time_string_to_decimals(time_string):
     return float(hours) + (float(minutes) / 60.0) + (float(seconds) / pow(60.0, 2))
 
 def make_document(input_data):
-	template = r"C:\Users\astur\Downloads\Skybound_Paysheet.docx"
+	template = r"/Skybound_Paysheet.docx"
 
 	document = MailMerge(template)
 
