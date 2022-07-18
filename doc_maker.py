@@ -17,7 +17,7 @@ def time_string_to_decimals(time_string):
     return float(hours) + (float(minutes) / 60.0) + (float(seconds) / pow(60.0, 2))
 
 def make_document(input_data):
-	template = r"/Skybound_Paysheet.docx"
+	template = r"./Skybound_Paysheet.docx"
 
 	document = MailMerge(template)
 
@@ -63,6 +63,7 @@ def make_document(input_data):
 
 		#Calculate Ground Time
 		time_delta = datetime.datetime.strptime(groundstop,"%H:%M") - datetime.datetime.strptime(groundstart,"%H:%M")
+
 		time_total_decimal = time_string_to_decimals(str(time_delta))
 
 		#Calcualte Cost
@@ -113,7 +114,7 @@ def make_document(input_data):
 	document.merge(**data)
 		
 	#Output File
-	path = './test-output.docx'
+	path = os.getcwd() + '/test-output.docx'
 	document.write(path)
 	return path
 

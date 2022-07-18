@@ -18,12 +18,6 @@ from doc_maker import make_document
 
 
 
-
-
-
-
-
-
 app = Flask(__name__, static_folder='', static_url_path='')
     
 
@@ -50,7 +44,12 @@ def pdf_gen():
 	#Write Command Line arg to, Convert DOCX to PDF
 	#os.system('docx2pdf ' + path + 'Skybound_Paysheet.pdf')
 	#process = subprocess.Popen(['docx2pdf', path,'Skybound_Paysheet.pdf'])
-	process = subprocess.call(['docx2pdf', path,'Skybound_Paysheet.pdf'])
+	if os.name == 'nt':
+		process = subprocess.call(['docx2pdf', path,'Skybound_Paysheet.pdf'])
+
+	else:
+		print(os.name)
+		process = subprocess.call(['libreoffice --headless --convert-to pdf '+path],shell=True)
 
 	
 	#return send_from_directory('', 'pdf_viewer.html')
