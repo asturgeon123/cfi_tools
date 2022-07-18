@@ -2,7 +2,7 @@
 
 import datetime
 import json
-
+import os
 
 from mailmerge import MailMerge
 
