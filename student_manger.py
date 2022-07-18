@@ -45,7 +45,7 @@ def pdf_gen():
 	#os.system('docx2pdf ' + path + 'Skybound_Paysheet.pdf')
 	#process = subprocess.Popen(['docx2pdf', path,'Skybound_Paysheet.pdf'])
 	if os.name == 'nt':
-		process = subprocess.call(['docx2pdf', path,'Skybound_Paysheet.pdf'])
+		process = subprocess.call(['docx2pdf', path,'test-output.pdf'])
 
 	else:
 		print(os.name)
@@ -62,7 +62,7 @@ def get_pdf():
     if request.method == 'POST':
     	print("nigga shit")
     else:
-    	return send_from_directory('', 'Skybound_Paysheet.pdf')
+    	return send_from_directory('', 'test-output.pdf')
 
 
 
