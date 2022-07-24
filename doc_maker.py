@@ -7,7 +7,8 @@ import os
 from mailmerge import MailMerge
 
 
-
+def make_totals(data):
+	return data
 
 def time_string_to_decimals(time_string):
     fields = time_string.split(":")
@@ -32,8 +33,8 @@ def make_document(input_data):
 	#Generate Flight Total
 	if not data['hobbs_in'] == '' and not data['hobbs_out'] == '':
 
-		hobbs1 = float(data['hobbs_in'])
-		hobbs2 = float(data['hobbs_out'])
+		hobbs2 = float(data['hobbs_in'])
+		hobbs1 = float(data['hobbs_out'])
 		hobbs_total = round(hobbs2 - hobbs1,1)
 		data['hobbs_total'] = str(hobbs_total)
 
@@ -50,6 +51,8 @@ def make_document(input_data):
 
 		line_row = {'product_name': 'Flight Instruction','product_rate': '$'+str(data['flight_instruction_rate']),'product_quantity': str(round(hobbs_total,2)),'product_total': '$'+str(round(total_cost,2))}
 		sales_history.append(line_row)
+	else:
+		data['hobbs_total'] = 0
 
 
 
@@ -76,6 +79,8 @@ def make_document(input_data):
 		#Add Product to Sales receipt
 		line_row = {'product_name': 'Ground Instruction','product_rate': '$'+data['ground_instruction_rate'],'product_quantity': str(round(time_total_decimal,2)),'product_total': '$'+str(total_cost)}
 		sales_history.append(line_row)
+	else:
+		data['ground_total'] = 0
 
 
 	#Generate Other Product Total

@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  background: linear-gradient(#00bf8f,#001510);
+
+  background: linear-gradient(#414141,#000000);
   background-attachment: fixed;
   height: 100%;
   padding: 25px;
@@ -22,7 +23,9 @@ h1 {
   text-align:  center;
 }
 
-
+.form-check-label {
+  color: white;
+}
 
 
 label {

@@ -50,7 +50,13 @@
 
 
         <br>
-    	<h4>Flight Time</h4>
+    	<h4>Flight - 
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckChecked">Add to Logbook
+          </label>
+        </h4>
+
+
     	<div class="form-floating mb-3">
             <select class="form-select" id="plane" aria-label="Plane">
                 <option value="173PM">173PM</option>
@@ -60,20 +66,83 @@
         </div>
 
     	<div class="row">
-        	<div class="col">
-		        <div class="form-floating mb-3">
-		            <input class="form-control auto_move_cursor" maxlength="6" step=".01" id="hobbsIn" type="number" placeholder="HOBBS IN" data-sb-validations="" />
-		            <label for="hobbsIn">HOBBS IN</label>
-		        </div>
-		      	</div>
 		      	<div class="col">
 
 		        <div class="form-floating mb-3">
-		            <input class="form-control auto_move_cursor" maxlength="6" step=".01" id="hobbsOut" type="number" placeholder="HOBBS OUT" data-sb-validations="" />
+		            <input class="form-control auto_decimal" tabindex="1" maxlength="6" step=".01" id="hobbsOut" type="text" placeholder="HOBBS OUT" data-sb-validations="" />
 		            <label for="hobbsOut">HOBBS OUT</label>
 		        </div>
     		</div>
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_decimal" tabindex="2"maxlength="6" step=".01" id="hobbsIn" type="text" placeholder="HOBBS IN" data-sb-validations="" />
+                    <label for="hobbsIn">HOBBS IN</label>
+                </div>
+                </div>
     	</div>
+
+        <br>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_move_cursor"  data-max="2" tabindex="3" maxlength="2" step="1" id="takeoffs" type="text" placeholder="takeoffs" data-sb-validations="" />
+                    <label for="takeoffs">Takeoffs</label>
+                </div>
+                </div>
+                <div class="col">
+
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_move_cursor" data-max="2" tabindex="4" maxlength="2" step="1" id="landings" type="text" placeholder="landings" data-sb-validations="" />
+                    <label for="landings">Landings</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-floating mb-3">
+            <input class="form-control" value="" id="Route" type="text" tabindex="5" placeholder="Route"/>
+            <label for="Route">Route</label>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_move_cursor" tabindex="6" maxlength="3" step="0.1" id="TT" type="number" placeholder="TT" data-sb-validations="" />
+                    <label for="TT">TT</label>
+                </div>
+            </div>
+            <div class="col">
+
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_move_cursor" tabindex="7" maxlength="3" step="0.1" id="PIC" type="number" placeholder="PIC" data-sb-validations="" />
+                    <label for="PIC">PIC</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_move_cursor" tabindex="8" maxlength="3" step="0.1" id="DUEL" type="number" placeholder="DUEL" data-sb-validations="" />
+                    <label for="DUEL">DUEL</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_move_cursor" tabindex="9" maxlength="3" step="0.1" id="XC" type="text" placeholder="XC" data-sb-validations="" />
+                    <label for="XC">XC</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input class="form-control auto_move_cursor" tabindex="10" maxlength="3" step="0.1" id="NIGHT" type="text" placeholder="NIGHT" data-sb-validations="" />
+                    <label for="NIGHT">NIGHT</label>
+                </div>
+            </div>
+        </div>
 
 		<br>
     	<h4>Ground Time</h4>
@@ -81,14 +150,14 @@
     	<div class="row">
         	<div class="col">
 		        <div class="form-floating mb-3">
-		            <input class="form-control " id="groundStart" type="time" placeholder="Ground Start" data-sb-validations="" />
+		            <input class="form-control " id="groundStart" tabindex="11" type="time" placeholder="Ground Start" data-sb-validations="" />
 		            <label for="groundStart">Ground Start</label>
 		        </div>
 		      	</div>
 		      	<div class="col">
 
 			        <div class="form-floating mb-3">
-			            <input class="form-control" id="groundEnd" type="time" placeholder="Ground End" data-sb-validations="" />
+			            <input class="form-control" id="groundEnd" tabindex="12" type="time" placeholder="Ground End" data-sb-validations="" />
 			            <label for="groundEnd">Ground End</label>
 			        </div>
     		</div>
@@ -106,7 +175,7 @@
 			 </div>
 			 <div class="col">
 		        <div class="form-floating mb-3">
-		            <input class="form-control" step=".01" id="productPrice" type="number" placeholder="Product Price" data-sb-validations="" />
+		            <input class="form-control" step=".01" id="productPrice" type="text" placeholder="Product Price" data-sb-validations="" />
 		            <label for="productPrice">Product Price</label>
 		        </div>
 	    	</div>
