@@ -42,13 +42,13 @@ def make_document(input_data):
 
 		#Add Product to Sales receipt
 
-		line_row = {'product_name': 'REMOSGX Rental','product_rate': '$'+str(data['remos_hourly_rate']),'product_quantity': str(hobbs_total),'product_total': '$'+str(total_cost)}
+		line_row = {'product_name': 'Remos Rental','product_rate': '$'+str(data['remos_hourly_rate']),'product_quantity': str(round(hobbs_total,2)),'product_total': '$'+str(total_cost)}
 		sales_history.append(line_row)
 
 		total_cost = hobbs_total*float(data['flight_instruction_rate'])
 		grand_total += total_cost
 
-		line_row = {'product_name': 'Flight Instruction','product_rate': '$'+str(data['flight_instruction_rate']),'product_quantity': str(hobbs_total),'product_total': '$'+str(total_cost)}
+		line_row = {'product_name': 'Flight Instruction','product_rate': '$'+str(data['flight_instruction_rate']),'product_quantity': str(round(hobbs_total,2)),'product_total': '$'+str(round(total_cost,2))}
 		sales_history.append(line_row)
 
 
@@ -64,7 +64,7 @@ def make_document(input_data):
 		#Calculate Ground Time
 		time_delta = datetime.datetime.strptime(groundstop,"%H:%M") - datetime.datetime.strptime(groundstart,"%H:%M")
 
-		time_total_decimal = time_string_to_decimals(str(time_delta))
+		time_total_decimal = round(time_string_to_decimals(str(time_delta)),1)
 
 		#Calcualte Cost
 		total_cost = round(time_total_decimal * float(data['ground_instruction_rate']),2)
@@ -74,7 +74,7 @@ def make_document(input_data):
 		print("Ground Total",data['ground_total'])
 
 		#Add Product to Sales receipt
-		line_row = {'product_name': 'Ground Instruction','product_rate': '$'+data['ground_instruction_rate'],'product_quantity': str(time_total_decimal),'product_total': '$'+str(total_cost)}
+		line_row = {'product_name': 'Ground Instruction','product_rate': '$'+data['ground_instruction_rate'],'product_quantity': str(round(time_total_decimal,2)),'product_total': '$'+str(total_cost)}
 		sales_history.append(line_row)
 
 
@@ -116,10 +116,10 @@ def make_document(input_data):
 	#Output File
 	path = os.getcwd() + '/test-output.docx'
 	document.write(path)
-	return path
+	return [path,data]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	json = {'ground_instruction_rate':"50",'flight_instruction_rate':"50",'remos_block10_rate': '110', 'remos_block5_rate': '115', 'remos_hourly_rate': '120', 'cfi_name': 'Alex Sturgeon', 'student_name': 'Student Name', 'destination': 'KCGI', 'payment_method': 'Cash', 'tailnumber': '173PM', 'hobbs_in': '1234', 'hobbs_out': '1235.3', 'ground_start': '11:49', 'ground_stop': '13:52', 'product_name': 'PRODUCT 1', 'productprice': '204', 'hobbs_total': '1.0', 'date': '7/11/2022'}
 
 	make_document(json)

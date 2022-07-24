@@ -62,14 +62,14 @@
     	<div class="row">
         	<div class="col">
 		        <div class="form-floating mb-3">
-		            <input class="form-control" step=".01" id="hobbsIn" type="number" placeholder="HOBBS IN" data-sb-validations="" />
+		            <input class="form-control auto_move_cursor" maxlength="6" step=".01" id="hobbsIn" type="number" placeholder="HOBBS IN" data-sb-validations="" />
 		            <label for="hobbsIn">HOBBS IN</label>
 		        </div>
 		      	</div>
 		      	<div class="col">
 
 		        <div class="form-floating mb-3">
-		            <input class="form-control" step=".01" id="hobbsOut" type="number" placeholder="HOBBS OUT" data-sb-validations="" />
+		            <input class="form-control auto_move_cursor" maxlength="6" step=".01" id="hobbsOut" type="number" placeholder="HOBBS OUT" data-sb-validations="" />
 		            <label for="hobbsOut">HOBBS OUT</label>
 		        </div>
     		</div>
@@ -81,7 +81,7 @@
     	<div class="row">
         	<div class="col">
 		        <div class="form-floating mb-3">
-		            <input class="form-control" id="groundStart" type="time" placeholder="Ground Start" data-sb-validations="" />
+		            <input class="form-control " id="groundStart" type="time" placeholder="Ground Start" data-sb-validations="" />
 		            <label for="groundStart">Ground Start</label>
 		        </div>
 		      	</div>
@@ -106,7 +106,7 @@
 			 </div>
 			 <div class="col">
 		        <div class="form-floating mb-3">
-		            <input class="form-control" step=".01" id="productPrice" type="text" placeholder="Product Price" data-sb-validations="" />
+		            <input class="form-control" step=".01" id="productPrice" type="number" placeholder="Product Price" data-sb-validations="" />
 		            <label for="productPrice">Product Price</label>
 		        </div>
 	    	</div>
@@ -123,7 +123,7 @@
             <div class="text-center text-danger mb-3">Error sending message!</div>
         </div>
 
-        <div class="d-grid">
+        <div class="d-grid mb-3">
             <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
         </div>
     </form>

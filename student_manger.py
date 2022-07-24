@@ -8,6 +8,7 @@ import os
 import subprocess
 
 from doc_maker import make_document
+from records_manger import excel_record
 
 
 
@@ -36,7 +37,12 @@ def pdf_gen():
 	print(data)
 
 
-	path = make_document(data)
+
+	path,data = make_document(data)
+
+	timesheet = excel_record("time_sheet.xlsx")
+	timesheet.add_flight(data['student_name'],data['hobbs_total'],data['ground_total'],"") #Log Flight in Time sheet
+
 
 	print("Input Path", path)
 
@@ -44,15 +50,14 @@ def pdf_gen():
 	#Write Command Line arg to, Convert DOCX to PDF
 	#os.system('docx2pdf ' + path + 'Skybound_Paysheet.pdf')
 	#process = subprocess.Popen(['docx2pdf', path,'Skybound_Paysheet.pdf'])
-	if os.name == 'nt':
-		process = subprocess.call(['docx2pdf', path,'test-output.pdf'])
+	if os.name == 'nt': #If windows 
+		process = subprocess.call(['docx2pdf', path, path[:-4] + 'pdf'])
 
-	else:
+	else: #Not windows
 		print(os.name)
 		process = subprocess.call(['libreoffice --headless --convert-to pdf '+path],shell=True)
 
 	
-	#return send_from_directory('', 'pdf_viewer.html')
 	resp = jsonify(success=True)
 	return resp
 

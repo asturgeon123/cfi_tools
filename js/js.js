@@ -34,6 +34,20 @@ $("form").submit(function(event) {
      });
 
 
+var input_items = $( ".auto_move_cursor" ).map(function() {return this.id;})
+console.log(input_items)
+console.log(typeof(input_items))
+
+$(".auto_move_cursor").keyup(function () {
+    if (this.value.length == this.maxLength) {
+      console.log(this.value.length)
+
+      let index = input_items.indexOf(this.id);
+      $("#"+input_items[index]).focus();
+    }
+});
+
+
 
 
 
